@@ -1,0 +1,19 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "algo practice",
+  "main": "algos.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmart11/Algorithms.git"
+  },
+  "author": "Cristian Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmart11/Algorithms/issues"
+  },
+  "homepage": "https://github.com/cmart11/Algorithms#readme"
+}
