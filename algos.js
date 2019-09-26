@@ -1,7 +1,7 @@
 // Print Prime numbers
 function isPrime(num) {
     if (num === 0 || num === 1) {
-        return false
+        return false;
     }
     for (let i = 2; i < num; i++) {
         if (num % i === 0) {
@@ -12,21 +12,21 @@ function isPrime(num) {
 }
 
 function display(n) {
-    let arr = []
+    let arr = [];
     if (n === 2) {
-        arr.push(2)
-        return arr
+        arr.push(2);
+        return arr;
     }
 
     for (let i = 3; i < n; i++) {
         const currNum = i;
         if (isPrime(currNum)) {
-            arr.push(currNum)
+            arr.push(currNum);
         }
     }
-    return arr
+    return arr;
 }
-console.log(display(2))
+console.log(display(2));
 
 
 // Truncate a string
@@ -39,7 +39,7 @@ function truncateString(str, num) {
     }
 }
 
-console.log(truncateString('A-tisket a-tasket A green and yellow basket', 8))
+console.log(truncateString('A-tisket a-tasket A green and yellow basket', 8));
 
 // Repeat a string N times
 function repeatStringNumTimes(str, num) {
@@ -133,22 +133,22 @@ function mergeSort(array) {
 const search = (arr, num) => {
     //arr.sort((a, b) => a - b); // time and space complexity depends for .sort() depends on JS runtime environment
 
-    let left = 0
-    let right = arr.length - 1
+    let left = 0;
+    let right = arr.length - 1;
     while (left <= right) {
-        const middle = Math.floor((left + right) / 2)
-        const possibleMatch = array[middle]
+        const middle = Math.floor((left + right) / 2);
+        const possibleMatch = array[middle];
         if (num === possibleMatch) {
-            return middle
+            return middle;
         } else if (num < possibleMatch) {
-            right = middle - 1
+            right = middle - 1;
         } else {
-            left = middle + 1
+            left = middle + 1;
         }
     }
-    return false
-}
+    return false;
+};
 
-const array = [1, 2, 4, 5, 6, 7, 9, 23, 43, 299]
+const array = [1, 2, 4, 5, 6, 7, 9, 23, 43, 299];
 
-console.log(search(array, 2))
+console.log(search(array, 2));
