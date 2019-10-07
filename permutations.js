@@ -26,5 +26,7 @@ function swap(left, right, arr) {
 // console.log(getPermutations([1, 2, 3, 4]));
 console.log(getPermutations([1, 2, 3])); //0 perms so [[]]
 console.log(getPermutations(['A', 'B', 'C'])); //0 perms so [[]]
+console.log(getPermutations(['A', 'A'])); //0 perms so [[]]
+
 
 
