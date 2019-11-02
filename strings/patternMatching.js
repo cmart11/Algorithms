@@ -36,3 +36,56 @@ function naivePatternSeach(str, pattern) {
 }
 
 console.log(naivePatternSeach(string1, pattern1));
+
+function patternMatcher(pattern, string) {
+	if (pattern.length > string.length){
+		return []
+	}
+	let newPattern = getNewPattern(pattern)
+	let didSwitch = newPattern[0] !== pattern[0]
+	let counts = { 'x': 0, 'y': 0}
+	let firstYPos = getCountAndFirstYPos(newPattern, counts)
+	if (counts['y'] !== 0){
+		for (let lenOfX = 1; lenOfX < string.length; lenOfX++){
+			const lenOfY = (string.length - lenOfX * counts['x']) / counts['y']
+			if (lenOfY <= 0 || lenOfY % 1 !== 0) continue
+			const yIdx = lenOfX * firstYPos
+			const x = string.slice(0, lenOfX),
+						y = string.slice(yIdx, yIdx + lenOfY)
+			const potentialMatch = newPattern.map(char => (char === "x" ? x : y))
+			if (string === potentialMatch.join('')){
+				return !didSwitch ? [x, y] : [y, x]
+			}
+		}
+	} else {
+		 const lenOfX = string.length / counts['x']
+		 if (lenOfX % 1 === 0){
+			 const x = string.slice(0, lenOfX)
+			 const potentialMatch = newPattern.map(char => char === "x" ? x : y)
+			 if (string === potentialMatch.join('')){
+				 return !didSwitch ? [x, ""] : ["", x]
+			 }
+		 }
+	}
+	return []
+}
+
+function getNewPattern(pattern){
+	let np = pattern.split('')
+	if (pattern[0] === 'x'){
+		return np
+	} else {
+		return np.map(str => str === 'y' ? 'x' : 'y')
+	}
+}
+
+function getCountAndFirstYPos(pattern, counts){
+	let firstYPos = null
+	for (let i = 0; i < pattern.length; i++){
+		counts[pattern[i]] += 1
+		if (pattern[i] === 'y' && firstYPos === null){
+			firstYPos = i
+		}
+	}
+	return firstYPos
+}
