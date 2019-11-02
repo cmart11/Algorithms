@@ -8,6 +8,7 @@ function balancedBrackets(string) {
 	let closing = '}])'
 	
 	let stack = []
+	
 	for (const str of string){
 		if (brackets[str] !== undefined){
 			stack.push(str)

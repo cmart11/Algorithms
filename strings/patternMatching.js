@@ -10,8 +10,6 @@ const string1 = 'AABAACAADAABAABA'
     
     Time: O((m*(n-m+1)))
     
-
-
 */
 
 function naivePatternSeach(str, pattern) {
