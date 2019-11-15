@@ -51,7 +51,7 @@ function patternMatcher(pattern, string) {
 			if (lenOfY <= 0 || lenOfY % 1 !== 0) continue
 			const yIdx = lenOfX * firstYPos
 			const x = string.slice(0, lenOfX),
-						y = string.slice(yIdx, yIdx + lenOfY)
+				  y = string.slice(yIdx, yIdx + lenOfY)
 			const potentialMatch = newPattern.map(char => (char === "x" ? x : y))
 			if (string === potentialMatch.join('')){
 				return !didSwitch ? [x, y] : [y, x]
